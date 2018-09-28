@@ -44,14 +44,29 @@ const int  a = 160, o = 162, i = 161, e = 130, u = 163;
 | Salida: ninguna 
 |	
 //---------------------------------------------------------------*/
+
 void delay(int secs) {
   for(int i = (time(NULL) + secs); time(NULL) != i; time(NULL));
 }
 
+/*---------------------------------------------------------------//
+| Describcion: Implementacion de las clases y parte interactiva
+| con el usuario
+| 
+| Entrada: pide la intervencion del usuarioen muchas ocaciones
+| por lo que puede tener una cantidad indeterminada de entradas
+|
+| Salida: la salida depende totalmente de los dtos introducidos 
+| el usuario
+|	
+//---------------------------------------------------------------*/
 int main(){
 
 	string nombre, maquina, opcionesEntrada, opcionIngreso, opcionRegistrado;
 	int edad, contador;
+	/*---------------------------------------------------------------//
+	| Creacion del Gimnacio desde cero
+	//---------------------------------------------------------------*/
 	Gimnasio *gym = new Gimnasio(0,0,0,0,0);
 
 	do{
