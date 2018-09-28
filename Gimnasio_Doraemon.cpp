@@ -1,23 +1,23 @@
-/*
-Nombre del Proyecto: Gimnasio De Doraemon.
-Dia De Inicio: 08-09-2018.
-Version 1.0.
+/*---------------------------------------------------------------//
+| Nombre del Proyecto: Gimnasio De Doraemon.
+| Dia De Inicio: 08-09-2018.
+| Version 1.0.
+|
+| Integrantes:
+|
+| - Juan Sebastian Reyes Leyton.
+| - Carlos Andres Angel Calderon.
+| - Daniel Fernando Sosa.
+|
+| Docente: Simena Dinas.
+|
+| Curso: Tecnicas y Practicas De Programacion.
+| Semestre II 
+|
+| Pontificia Universidad Javeriana Cali
+| 2018	
+//---------------------------------------------------------------*/
 
-Integrantes:
-
-- Juan Sebastian Reyes Leyton.
-- Carlos Andres Angel Calderon.
-- Daniel Fernando Sosa.
-
-Docente: Simena Dinas.
-
-Curso: Tecnicas y Practicas De Programacion.
-Semestre II 
-
-Pontificia Universidad Javeriana Cali
-2018
-
-*/
 #include "Gimnasio.h"
 #include "Recepcion.h"
 #include "Zona_Pesas.h"
@@ -31,8 +31,19 @@ Pontificia Universidad Javeriana Cali
 #include <fstream>
 using namespace std;
 
+/*---------------------------------------------------------------//
+| Variables constantes para la introduccion de vocales con tilde |	
+//---------------------------------------------------------------*/
+
 const int  a = 160, o = 162, i = 161, e = 130, u = 163;
 
+/*---------------------------------------------------------------//
+| Funcion de conteo de tiempo de espera
+| 
+| Entrada: cantidad determinada de segundos
+| Salida: ninguna 
+|	
+//---------------------------------------------------------------*/
 void delay(int secs) {
   for(int i = (time(NULL) + secs); time(NULL) != i; time(NULL));
 }
