@@ -1,4 +1,4 @@
-		Gimnasio De Doraemon.
+﻿		Gimnasio De Doraemon.
 			Version 2.0.
 
 
@@ -6,8 +6,8 @@ _________BIENVENIDO__________
 
 Instrucciones de Complilacion:
 
-1. Se recomienda que utilises el cmd de windows para la compilacion ya
-que es mas facil y practico.
+1. Se recomienda que utilises el cmd de windows para la compilacion ya 
+que es mas facil y practico, a su vez tener instalado MinGW.
 
 2. Primeramente descomprime el Gimnasio_Doraemon.rar
 
