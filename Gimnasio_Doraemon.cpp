@@ -49,11 +49,9 @@ int main(){
 		//Menu de entrada
 		cout<<"::--:: Bienvenidos Al Gimnasio de Doraemon .:::."<<endl;
 		cout<<"   Favor escoge una opci"<<(char)o<<"n para la simulaci"<<(char)o<<"n"<<endl;
-		cout<<"1) Recepcionista."<<endl;
-		cout<<"2) Portero."<<endl;
-		cout<<"3) Contador."<<endl;
-		cout<<"4) Administrador."<<endl;
-		cout<<"0) Salir."<<endl;
+		cout<<"1) Usuario"<<endl;
+		cout<<"2) Administrador."<<endl;
+		cout<<"3) Salir."<<endl;
 		cout<<endl;
 		cout<<"Opci"<<(char)o<<"n: ";
 		cin>>opcionesEntrada;
@@ -72,7 +70,7 @@ int main(){
 		if(opcionesEntrada.compare("1") == 0){
 			
 			//Bienvenida
-			cout<<"Bienvenido a la opci"<<(char)o<<"n de Recepcionista"<<endl;
+			cout<<"Bienvenido a la opci"<<(char)o<<"n de Usuario"<<endl;
 			delay(1);
 			system("cls");
 			cout<<"Comencemos"<<endl;
@@ -125,7 +123,7 @@ int main(){
 
 
 		//Opcion entrada 2
-		if(opcionesEntrada.compare("4") == 0){
+		if(opcionesEntrada.compare("2") == 0){
 
 			//Bienvenida
 			cout<<"Bienvenido a la opci"<<(char)o<<"n de Administrador"<<endl;
@@ -167,13 +165,7 @@ int main(){
 				system("cls");
 				//Termina efecto de espera
 
-				// if(opcionIngreso.compare("1") != 0 && opcionIngreso.compare("5") != 0 && opcionIngreso.compare("2") != 0){
-
-				// 	//Cuando el usuario mete una opcion que no esta dentro del rango
-
-				// 	cout<<"La opci"<<(char)o<<"n "<<opcionIngreso<<" no existe."<<endl;
-				// 	delay(1);
-				// }
+				
 
 				//Opcion ingreso 1
 				if(opcionIngreso.compare("1") == 0){
@@ -281,28 +273,16 @@ int main(){
 			}while(opcionIngreso.compare("0") != 0);
 
 		}
-		//Termina op
-		//terminacion entrada 2
-		//Despedida
-		cout<<"Bienvenido al men"<<(char)u<<" principal."<<endl;
-		delay(1);
-		system("cls");
-		//Termina Despedida
 
-		if(opcionesEntrada.compare("3") != 0 && opcionesEntrada.compare("1") != 0 && opcionesEntrada.compare("2") != 0){
-				
-			//Efecto de espera
-			cout<<"Un momento por favor."<<endl;
+		if(opcionesEntrada.compare("3") != 0){
+			//Despedida
+			cout<<"Bienvenido al men"<<(char)u<<" principal."<<endl;
 			delay(1);
 			system("cls");
-			cout<<"Un momento por favor.."<<endl;
-			delay(1);
-			system("cls");
-			//Termina efecto de espera
-
-			cout<<"La opciones Entrada "<<opcionesEntrada<<" no existe."<<endl;
-			delay(1);
+			//Termina Despedida
 		}
+
+		
 	
 		
 	}while(opcionesEntrada.compare("3") != 0);
@@ -310,7 +290,7 @@ int main(){
 	//Despedida
 	system("cls");
 	cout<<"Hasta luego que vuelva pronto"<<endl;
-	delay(30);
+	delay(2);
 	system("cls");
 	//Termina Despedida
 
