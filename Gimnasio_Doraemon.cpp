@@ -206,37 +206,47 @@ int main(){
 				
 
 				//Opcion ingreso 1
+				/*---------------------------------------------------------------//
+				| Inicializacion del Gymnasio desde cero 						 |	
+				//---------------------------------------------------------------*/
+
 				if(opcionIngreso.compare("1") == 0){
 					int Zona_Pesas, Zona_Humeda, Zona_Cardio, Recepcion, Gym;
 
 					cout<<"Bienvenido a la inaguracion del Gimnasio de Doraemon"<<endl;
 					delay(2);
 					system("cls");
-					cout<<"Por favor ingresa los datos..."<<endl;
-					cout<<"Capacidad total de personas de la Recepcion"<<endl;
+					cout<<"..::..Por favor ingresa los datos..::.."<<endl;
+					cout<<"Capacidad total de personas de la Recepcion: ";
 					cin>>Recepcion;
 					gym->set_CapMaxima( "recepcion", Recepcion);
 					Gym += Recepcion;
 					system("cls");
 					cout<<"Capacidad total de personas de la Zona Pesas"<<endl;
+					cout<<"Capacidad total de personas de la Zona Pesas: ";
 					cin>>Zona_Pesas;
 					gym->set_CapMaxima( "zona_pesas", Zona_Pesas);
 					Gym += Zona_Pesas;
 					system("cls");
 					cout<<"Capacidad total de personas de la Zona Cardio"<<endl;
+					cout<<"Capacidad total de personas de la Zona Cardio: ";
 					cin>>Zona_Cardio;
 					gym->set_CapMaxima( "zona_cardio", Zona_Cardio);
 					Gym += Zona_Cardio;
 					system("cls");
-					cout<<"Capacidad total de personas de la Zona Humeda"<<endl;
+					cout<<"Capacidad total de personas de la Zona Humeda: ";
 					cin>>Zona_Humeda;
 					gym->set_CapMaxima( "zona_humeda", Zona_Humeda);
 					Gym += Zona_Humeda;
 					system("cls");
 					gym->set_CapMaximaGym(Gym);
-					cout<<"Gracias por su colaboracion"<<endl;
+					cout<<"..::..Gracias por su colaboracion..::.."<<endl;
 					delay(1);					
 				}
+
+				/*---------------------------------------------------------------//
+				| Cambio de 					 |	
+				//---------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("2") == 0){
 					int estado;
