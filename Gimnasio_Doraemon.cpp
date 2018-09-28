@@ -72,7 +72,10 @@ int main(){
 	do{
 		system("cls");
 
-		//Menu de entrada
+		/*---------------------------------------------------------------//
+		|Menu de inicio
+		//---------------------------------------------------------------*/
+
 		cout<<"::--:: Bienvenidos Al Gimnasio de Doraemon .:::."<<endl;
 		cout<<"   Favor escoge una opci"<<(char)o<<"n para la simulaci"<<(char)o<<"n"<<endl;
 		cout<<"1) Usuario"<<endl;
@@ -82,6 +85,7 @@ int main(){
 		cout<<"Opci"<<(char)o<<"n: ";
 		cin>>opcionesEntrada;
 		system("cls");
+		
 		//Termina menu de entrada
 
 		//Efecto de espera
@@ -91,8 +95,12 @@ int main(){
 		system("cls");
 		//Termina Efecto de espera
 
+		/*---------------------------------------------------------------//
+		| Seccion de opciones de usuario, esta contiene todas las posibles
+		| interaccion, dentro de esta seccion se encuentran el recepcionista,
+		| portero y contador cada uno con sus respecivas opciones
+		//---------------------------------------------------------------*/
 
-		//Opcion entrada 1
 		if(opcionesEntrada.compare("1") == 0){
 			
 			//Bienvenida
@@ -148,7 +156,12 @@ int main(){
 		//Termina opcion entrada 1
 
 
-		//Opcion entrada 2
+		/*---------------------------------------------------------------//
+		| Seccion de opciones de Administrador, esta contiene todas las posibles
+		| interacciones, dentro de esta seccion se encuentran todos los cambios
+		| de capacidad la contratacion y despido de clientes, cambios de capacidad,
+		| inicializacion total del gymnasion o cerrar totalmente el gym
+		//---------------------------------------------------------------*/
 		if(opcionesEntrada.compare("2") == 0){
 
 			//Bienvenida
@@ -163,7 +176,6 @@ int main(){
 				system("cls");
 
 				//Menu ingreso
-
 				cout<<"..::.. Opci"<<(char)o<<"n del Administrador..::.."<<endl<<endl;
 				cout<<"1) Inagurar El Gimnasio de Doraemon."<<endl;
 				cout<<"2) Cambiar el Estado del Gimnacio."<<endl;
