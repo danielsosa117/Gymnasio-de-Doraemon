@@ -60,12 +60,8 @@ void Recepcion::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
-		recepcionista = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		recepcionista = new Empleado(cargo, codigo, salario);
 	}
 
 	else if(cargo.compare("empleado servicio") == 0){
@@ -79,13 +75,9 @@ void Recepcion::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
 		cout<<"Gracias por su colaboracion"<<endl;
-		empleado_servicio = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		empleado_servicio = new Empleado(cargo, codigo, salario);
 	}
 }
 
