@@ -44,8 +44,8 @@ int ZonaHumeda::get_PersonasHum(){
 }
 
 void ZonaHumeda::contratar_empleado(string cargo){
-	
-	int codigo, salario;
+	string aseguradora;
+	int codigo, salario, subsidio;
 	
 	if(cargo.compare("encargado_zona") == 0){
 

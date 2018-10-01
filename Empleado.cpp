@@ -97,6 +97,8 @@ void Empleado::mostrar_datos(){
 	cout << "Cargo " << get_Cargo() <<endl;
 	cout << "C"<<(char)o<<"digo " << get_Codigo() <<endl;
 	cout << "Salario	 " << get_Salario() <<endl;
+	cout << "Horas laboradas " << get_Horas_laboradas() <<endl;
+	cout << "Aseguradora " << get_Seguro() <<endl;
 }
 
 ////////////////Constructores////////////////
@@ -115,7 +117,6 @@ Empleado::Empleado(){
 	set_Cargo("Empleado de servicio");
 	set_Codigo(3236301);
 	set_Salario(800000);
-}
 
 /*
 Descripcion: Es el constructor 
@@ -130,7 +131,7 @@ Precondiciones: Ninguna
 Poscondiciones: Ninguna
 */
 
-Empleado::Empleado(string cargo, int codigo,int salario){
+Empleado::Empleado(string cargo, int codigo,int salario, string seguro, int subisidio){
 	cout <<endl;
 	cout << "**** Contratacion empleado" <<endl;
 	set_Cargo(cargo);

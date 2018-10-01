@@ -44,8 +44,8 @@ int ZonaCardio::get_PersonasCar(){
 }
 
 void ZonaCardio::contratar_empleado(string cargo){
-	
-	int codigo, salario;
+	string aseguradora;
+	int codigo, salario, subsidio;
 	
 	if(cargo.compare("entrenador_cardio") == 0){
 
@@ -75,7 +75,7 @@ void ZonaCardio::contratar_empleado(string cargo){
 		cin>>salario;
 		system("cls");
 		cout<<"Gracias por su colaboracion"<<endl;
-		empleado_servicio = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		empleado_servicio = new Empleado(cargo, codigo, salario);
 	}
 }
 
