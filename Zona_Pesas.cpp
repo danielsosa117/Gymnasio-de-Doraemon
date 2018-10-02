@@ -45,8 +45,8 @@ int ZonaPesas::get_PersonasPes(){
 }
 
 void ZonaPesas::contratar_empleado(string cargo){
-	string aseguradora;
-	int codigo, salario, subsidio;
+	
+	int codigo, salario;
 	
 	if(cargo.compare("entrenador_pesas") == 0){
 
@@ -59,12 +59,8 @@ void ZonaPesas::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
-		entrenador_pesas = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		entrenador_pesas = new Empleado(cargo, codigo, salario);
 	}
 
 	else if(cargo.compare("empleado_servicio") == 0){
@@ -78,13 +74,9 @@ void ZonaPesas::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
 		cout<<"Gracias por su colaboracion"<<endl;
-		empleado_servicio = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		empleado_servicio = new Empleado(cargo, codigo, salario);
 	}
 }
 
@@ -93,8 +85,6 @@ void ZonaPesas::contratar_empleado(string cargo){
 ZonaPesas::ZonaPesas(){
 	cout<<"Se ha creado la zona pesas del Gimnasio de Doraemon(sin Administrador)"<<endl;
 	estadoPes = "Cerrado";
-	entrenador_pesas = new Empleado();
-	empleado_servicio = new Empleado();
 }
 
 ZonaPesas::ZonaPesas(int estado, int pes){
@@ -106,8 +96,6 @@ ZonaPesas::ZonaPesas(int estado, int pes){
 	else if(estado == 2)
 		estadoPes = "Mantenimiento";
 	capMaxPes = pes;
-	entrenador_pesas = new Empleado("entrenador_pesas",001,870000,"Cosalud", 01);
-	empleado_servicio=new Empleado("Empleado Servicio",002,800000,"coomeva", 01);
 }
 
 ZonaPesas::~ZonaPesas(){

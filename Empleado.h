@@ -34,17 +34,11 @@ class Empleado : public Persona{
     	void set_Cargo(string);
     	void set_Codigo(int);
     	void set_Salario(int);
-    	void set_Seguro(string);
-    	void set_Horas_laboradas(int);
-    	void set_Subsidio(int);
     	
     	string get_Cargo();
     	int get_Codigo();
     	int get_Salario();
-    	string get_Seguro();
-    	int get_Horas_laboradas();
-    	int get_Subsidio();
-    	
+
     	// metodos secundarios
     	void iniciar_horario();
     	void terminar_horario(int horas);
@@ -56,7 +50,7 @@ class Empleado : public Persona{
 		//constructores
 		
 		Empleado();
-		Empleado(string cargo, int codigo,int salario, string seguro, int subsidio);
+		Empleado(string cargo, int codigo,int salario);
 		
 		//destructor
 		

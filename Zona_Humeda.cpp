@@ -44,8 +44,8 @@ int ZonaHumeda::get_PersonasHum(){
 }
 
 void ZonaHumeda::contratar_empleado(string cargo){
-	string aseguradora;
-	int codigo, salario, subsidio;
+	
+	int codigo, salario;
 	
 	if(cargo.compare("encargado_zona") == 0){
 
@@ -58,12 +58,8 @@ void ZonaHumeda::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
-		encargado_zona = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		encargado_zona = new Empleado(cargo, codigo, salario);
 	}
 
 	else if(cargo.compare("empleado_servicio") == 0){
@@ -77,13 +73,9 @@ void ZonaHumeda::contratar_empleado(string cargo){
 		cin>>codigo;
 		cout<<"Salario: ";
 		cin>>salario;
-		cout<<"Aseguradora: ";
-		cin>>aseguradora;
-		cout<<"Subsidio: ";
-		cin>>subsidio;
 		system("cls");
 		cout<<"Gracias por su colaboracion"<<endl;
-		empleado_servicio = new Empleado(cargo, codigo, salario, aseguradora,subsidio);
+		empleado_servicio = new Empleado(cargo, codigo, salario);
 	}
 }
 
