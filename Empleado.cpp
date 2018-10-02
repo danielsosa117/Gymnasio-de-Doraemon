@@ -32,18 +32,6 @@ void Empleado::set_Salario(int salario){
 	this->salario = salario;
 }//metodo para la modificacion de la variable privada salario
 
-void Empleado::set_Seguro(string seguro){
-	this->seguro = seguro;
-}//metodo para la modificacion de la variable privada seguro
-
-void Empleado::set_Horas_laboradas(int horas){
-	horas_laboradas += horas;
-}//metodo para la modificacion de la variable privada horas
-
-void Empleado::set_Subsidio(int subsidio){
-	this->subsidio = subsidio;
-}//metodo para la modificacion de la variable privada salario
-
 ////////////////MÉTODOS GET////////////////
 
 
