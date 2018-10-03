@@ -346,10 +346,10 @@ int main(){
 					cout<<"2) En mantenimiento."<<endl;
 					cout<<"0) Cerrado."<<endl<<endl;
 					cout<<"Zona: ";
-					getline(cin, zona);
+					cin>>zona;
 					cout<<"Estado: ";
 					cin>>estado;
-					cin.ignore();
+					gym->set_estZonas(zona, estado);
 					system("cls");
 					cout<<"Gracias por su colaboracion"<<endl;
 					delay(1);
