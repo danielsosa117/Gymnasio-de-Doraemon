@@ -32,6 +32,7 @@
 #include <fstream>
 #include <iomanip>
 #include <cctype>
+#include <cstdio>
 #include <stdlib.h>
 using namespace std;
 
@@ -207,7 +208,8 @@ int main(){
 				cout<<"4) Cambiar la capacidad de las Zonas."<<endl;
 				cout<<"5) Realizar contrataciones."<<endl;
 				cout<<"6) Despedir a clientes."<<endl;
-				cout<<"7) Mostrar datos del Gimnasio"<<endl;
+				cout<<"7) Mostrar datos de empleados"<<endl;
+				cout<<"8) Mostrar datos del Gimnasio"<<endl;
 				cout<<"0) Salir."<<endl;
 				cout<<endl;
 				cout<<"Opci"<<(char)o<<"n: ";
@@ -337,8 +339,7 @@ int main(){
 				//---------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("3") == 0){
-					int estado;
-					string zona;
+					string zona, estado;
 
 					cout<<"..::.. Bienvenido al modulo de modificacion del estado de las Zonas ..::.."<<endl;
 					cout<<"   Favor escoge un estado y una zona "<<endl;
@@ -346,18 +347,19 @@ int main(){
 					cout<<"2) En mantenimiento."<<endl;
 					cout<<"0) Cerrado."<<endl<<endl;
 					cout<<"Zona: ";
-					cin>>zona;
+					cin.ignore();
+					getline(cin, zona);
 					cout<<"Estado: ";
-					cin>>estado;
-					gym->set_estZonas(zona, estado);
+					getline(cin, estado);
+					gym->set_estZonas(zona, atoi(estado.c_str()));
 					system("cls");
 					cout<<"Gracias por su colaboracion"<<endl;
 					delay(1);
 				}
-				/*---------------------------------------------------------------//
+				/*-------------------------------------------------------------------------------//
 				| Cambio de capacidad por zonas unitariamente, es nesesario que escribas
 				| Zona Humeda por ejemplo para que el programa te saque un resultado satisfactorio				 |	
-				//---------------------------------------------------------------*/
+				//-------------------------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("4") == 0){
 					string capacidad;
@@ -423,13 +425,33 @@ int main(){
 				//---------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("5") == 0){
-					cout << "En una proxima vesi" << (char)o <<"n se hara funcionar esta opci" << (char)o <<"n." << endl;
+					string zona;
+
+					cout << ".::. Bienvenido al modulo de contratacion de empleados ..:::.."<< endl;
+					cout << ".::. ingresa la zona en la cual quieres realizar la contratacion ..:::.."<< endl;
+					cout<<"Zona: ";
+					cin.ignore();
+					getline(cin, zona);
+					cin.ignore();
+					gym->contratar_empleado_zona(zona);
+					system("PAUSE");
+
+				}
+				else if(opcionIngreso.compare("7") == 0){
+					string zona;
+					cout << ".::. Bienvenido al modulo de informacion de empleados ..:::.."<< endl;
+					cout << ".::. ingresa la zona en la que se encuentra el empleado ..:::.."<< endl;
+					cout<<"Zona: ";
+					cin.ignore();
+					getline(cin, zona);
+					gym->mostrar_datos_empleados_zona(zona);
+					system("PAUSE");
 				}
 				/*---------------------------------------------------------------//
 				| Muestra datos generales del gimnasio y sus zonas				 |	
 				//---------------------------------------------------------------*/
 
-				else if(opcionIngreso.compare("7") == 0){
+				else if(opcionIngreso.compare("8") == 0){
 					gym->mostrar_estado_general();
 				}
 

@@ -47,7 +47,7 @@ class Empleado : public Persona{
 		//constructores
 		
 		Empleado();
-		Empleado(string cargo, int codigo,int salario);
+		Empleado(string cargo, int codigo,int salario, string nombre, int edad, string gen, int iden);
 		
 		//destructor
 		

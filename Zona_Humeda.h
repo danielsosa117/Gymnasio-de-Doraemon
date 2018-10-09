@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 using namespace std;
+const int MAXH = 4;
 
 class ZonaHumeda{
 
@@ -14,8 +15,8 @@ private:
 	string estadoHum;
 	int capMaxHum;
 	int numPersonasHum;
-	Empleado *encargado_zona;
-	Empleado *empleado_servicio;
+	Empleado *empleado[MAXH];
+	int cont;
 
 public:
 
@@ -27,7 +28,9 @@ public:
 	string get_est_Hum();
 	int get_CapMaximaHum();
 	int get_PersonasHum();
-	void contratar_empleado(string cargo);
+
+	void contratar_empleado();
+	void mostrar_datos_empleado();
 
 	ZonaHumeda();
 	ZonaHumeda(int estado, int car);
