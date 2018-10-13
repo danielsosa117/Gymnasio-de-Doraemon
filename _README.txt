@@ -6,8 +6,9 @@ _________BIENVENIDO__________
 
 Instrucciones de Complilacion:
 
-1. Se recomienda que utilises el cmd de windows para la compilacion ya 
-que es mas facil y practico, a su vez tener instalado MinGW.
+1. Se recomienda que utilises el cmd de windows para la compilacion ya
+que es mas facil y practico. Tener instalado MinGW y a su vez tener las variables
+de entorno.
 
 2. Primeramente descomprime el Gimnasio_Doraemon.rar
 
@@ -17,7 +18,7 @@ y dale enter
 
 4. Lo anterior ha debido abrirte una pestaña del cmd con la direccion de la carpeta.
 
-5. copia el siguiente texto "g++ Gimnasio_Doraemon.cpp Gimnasio.o Recepcion.o Zona_Pesas.o Zona_Cardio.o Zona_Humeda.o Empleado.o Persona.o -o Gimnasio_Doraemon" y da enter.
+5. copia el siguiente texto "g++ Gimnasio_Doraemon.cpp Gimnasio.o Recepcion.o Zona_Pesas.o Zona_Cardio.o Zona_Humeda.o Empleado.o Persona.o BasesDatos.o -o Gimnasio_Doraemon" y da enter.
 
 6. ejecuta el Gimnasio_Doraemon.exe y disfruta.....
 

@@ -32,18 +32,6 @@ void Empleado::set_Salario(int salario){
 	this->salario = salario;
 }//metodo para la modificacion de la variable privada salario
 
-void Empleado::set_Seguro(string seguro){
-	this->seguro = seguro;
-}//metodo para la modificacion de la variable privada seguro
-
-void Empleado::set_Horas_laboradas(int horas){
-	horas_laboradas += horas;
-}//metodo para la modificacion de la variable privada horas
-
-void Empleado::set_Subsidio(int subsidio){
-	this->subsidio = subsidio;
-}//metodo para la modificacion de la variable privada salario
-
 ////////////////MÉTODOS GET////////////////
 
 
@@ -76,12 +64,10 @@ void Empleado::iniciar_horario(){
 }
 
 void Empleado::terminar_horario(int horas){
-	set_Horas_laboradas(horas);
 	cout << "Hasta luego" << get_Cargo() << endl;
 }
 
 void Empleado::pedir_permiso(int horas){
-	set_Horas_laboradas(-horas);
 	cout << "Has pedido permiso señ@r" << get_Cargo()  << endl;
 }
 
@@ -94,9 +80,13 @@ void Empleado::salir_comer(){
 }
 
 void Empleado::mostrar_datos(){
-	cout << "Cargo " << get_Cargo() <<endl;
-	cout << "C"<<(char)o<<"digo " << get_Codigo() <<endl;
-	cout << "Salario	 " << get_Salario() <<endl;
+	cout << "Cargo: " << get_Cargo() <<endl;
+	cout << "C"<<(char)o<<"digo: " << get_Codigo() <<endl;
+	cout << "Salario: " << get_Salario() <<endl;
+	cout << "Nombre: " << get_Nombre() <<endl;
+	cout << "Genero: " << get_Genero() <<endl;
+	cout << "Edad: " << get_Edad() <<endl;
+	cout << "identificacion: " << get_identidad(get_Edad()) <<endl;
 }
 
 ////////////////Constructores////////////////
@@ -130,12 +120,16 @@ Precondiciones: Ninguna
 Poscondiciones: Ninguna
 */
 
-Empleado::Empleado(string cargo, int codigo,int salario){
+Empleado::Empleado(string cargo, int codigo,int salario, string nombre, int edad, string gen, int iden){
 	cout <<endl;
 	cout << "**** Contratacion empleado" <<endl;
 	set_Cargo(cargo);
 	set_Codigo(codigo);
 	set_Salario(salario);
+	set_Nombre(nombre);
+	set_Edad(edad);
+	set_Genero(gen);
+	set_identidad(edad,iden);
 }
 
 ////////////////Destructor////////////////

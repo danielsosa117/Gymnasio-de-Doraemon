@@ -25,9 +25,6 @@ class Empleado : public Persona{
     	string cargo;
 	    int codigo;
         int salario;
-		string seguro;
-		int horas_laboradas;
-		int subsidio;
 		
 	//Declaracion de los métodos de la clase		
    public:
@@ -38,7 +35,7 @@ class Empleado : public Persona{
     	string get_Cargo();
     	int get_Codigo();
     	int get_Salario();
-
+    	
     	// metodos secundarios
     	void iniciar_horario();
     	void terminar_horario(int horas);
@@ -50,7 +47,7 @@ class Empleado : public Persona{
 		//constructores
 		
 		Empleado();
-		Empleado(string cargo, int codigo,int salario);
+		Empleado(string cargo, int codigo,int salario, string nombre, int edad, string gen, int iden);
 		
 		//destructor
 		
