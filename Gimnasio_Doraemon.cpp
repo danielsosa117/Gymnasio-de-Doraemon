@@ -115,12 +115,10 @@ void delay(int secs) {
 int main(){
 
 	//Manejo de Entradas
-	string nombre, maquina, opcionesEntrada, opcionIngreso, opcionRegistrado;
-	int edad, contador; 
+	string nombre, maquina, opcionRegistrado;
+	int edad, contador,  opcionesEntrada, opcionIngreso; 
 
 	llenarVectorUsuarios();
-
-
 
 	/*---------------------------------------------------------------//
 	| Creacion del Gimnacio desde cero
@@ -143,6 +141,24 @@ int main(){
 		cout<<endl;
 		cout<<"Opci"<<(char)o<<"n: ";
 		cin>>opcionesEntrada;
+		try{
+			if(opcionesEntrada < 1) throw 1;
+			if(opcionesEntrada > 3) throw 2;
+		}
+		catch(int error){
+			system("cls");
+			cout<< "Valor ingresado invalido. "<< endl;
+			if(error == 1){
+				cout<<"Este numero esta por debajo del rango"<<endl;
+				delay(2);
+				system("PAUSE");
+			}
+			if(error == 2){
+				cout<<"Este numero esta por ensima del rango"<<endl;
+				delay(2);
+				system("PAUSE");
+			}
+		}
 		system("cls");
 		
 		//Termina menu de entrada
@@ -160,7 +176,7 @@ int main(){
 		| portero y contador cada uno con sus respecivas opciones
 		//---------------------------------------------------------------*/
 
-		if(opcionesEntrada.compare("1") == 0){
+		if(opcionesEntrada==1){
 			
 			//Bienvenida
 			cout<<"Bienvenido a la opci"<<(char)o<<"n de Usuario"<<endl;
@@ -179,6 +195,24 @@ int main(){
 				cout<<endl;
 				cout<<"Opci"<<(char)o<<"n: ";
 				cin>>opcionIngreso;
+				try{
+					if(opcionIngreso < 1) throw 1;
+					if(opcionIngreso > 2) throw 2;
+				}
+				catch(int error){
+					system("cls");
+					cout<< "Valor ingresado invalido. "<< endl;
+					if(error == 1){
+						cout<<"Este numero esta por debajo del rango"<<endl;
+						delay(2);
+						system("PAUSE");
+					}
+					if(error == 2){
+						cout<<"Este numero esta por ensima del rango"<<endl;
+						delay(2);
+						system("PAUSE");
+					}
+				}
 				system("cls");
 				//Termina menu ingreso
 
@@ -192,25 +226,16 @@ int main(){
 				cout<<"Un momento por favor..."<<endl;
 				delay(1);
 				system("cls");
-				//Termina efecto de espera
-
-				if(opcionIngreso.compare("1") != 0 && opcionIngreso.compare("2") != 0){
-
-					//Cuando el usuario mete una opcion que no esta dentro del rango
-
-					cout<<"La opci"<<(char)o<<"n "<<opcionIngreso<<" no existe."<<endl;
-					delay(1);
-				}
-
+				
 				//Opcion ingreso 1
-				if(opcionIngreso.compare("1") == 0){
+				if(opcionIngreso == 1){
 
 					system("cls");
 					motrarUsuarios();
 					system("pause");
 				}
 
-			}while(opcionIngreso.compare("2") != 0);
+			}while(opcionIngreso != 2);
 		}
 		//Termina opcion entrada 1
 
@@ -221,7 +246,7 @@ int main(){
 		| de capacidad la contratacion y despido de clientes, cambios de capacidad,
 		| inicializacion total del gymnasion o cerrar totalmente el gym
 		//---------------------------------------------------------------*/
-		if(opcionesEntrada.compare("2") == 0){
+		if(opcionesEntrada==2){
 
 			//Bienvenida
 			cout<<"Bienvenido a la opci"<<(char)o<<"n de Administrador"<<endl;
@@ -247,6 +272,24 @@ int main(){
 				cout<<endl;
 				cout<<"Opci"<<(char)o<<"n: ";
 				cin>>opcionIngreso;
+				try{
+					if(opcionIngreso < 0) throw 1;
+					if(opcionIngreso > 7) throw 2;
+				}
+				catch(int error){
+					system("cls");
+					cout<< "Valor ingresado invalido. "<< endl;
+					if(error == 1){
+						cout<<"Este numero esta por debajo del rango"<<endl;
+						delay(2);
+						system("PAUSE");
+					}
+					if(error == 2){
+						cout<<"Este numero esta por ensima del rango"<<endl;
+						delay(2);
+						system("PAUSE");
+					}
+				}
 				system("cls");
 				//Termina menu ingreso
 
@@ -269,7 +312,7 @@ int main(){
 				| Inicializacion del Gymnasio desde cero 						 |	
 				//---------------------------------------------------------------*/
 
-				if(opcionIngreso.compare("1") == 0){
+				if(opcionIngreso == 1){
 					int Zona_Pesas, Zona_Humeda, Zona_Cardio, Recepcion, Gym;
 
 					cout<<"Bienvenido a la inaguracion del Gimnasio de Doraemon"<<endl;
@@ -307,7 +350,7 @@ int main(){
 				| Cambio de 					 |	
 				//---------------------------------------------------------------*/
 
-				else if(opcionIngreso.compare("2") == 0){
+				else if(opcionIngreso == 2){
 					int estado;
 
 					cout<<"..::.. Bienvenido al modulo de cambio de estado de Gimnasio ..::.."<<endl;
@@ -322,7 +365,7 @@ int main(){
 					delay(1);
 				}
 
-				else if(opcionIngreso.compare("3") == 0){
+				else if(opcionIngreso== 3){
 					int estado;
 					string zona;
 
@@ -341,7 +384,7 @@ int main(){
 					delay(1);
 				}
 
-				else if(opcionIngreso.compare("4") == 0){
+				else if(opcionIngreso == 4){
 					int capacidad;
 					string zona;
 
@@ -357,7 +400,7 @@ int main(){
 					delay(1);
 				}
 
-				else if(opcionIngreso.compare("5") == 0){
+				else if(opcionIngreso== 5){
 					string zona, cargo;
 					system("cls");
 					cout<<"..::.. Bienvenido al modulo de contrataciones ..::.."<<endl;
@@ -373,26 +416,23 @@ int main(){
 
 
 
-				else if(opcionIngreso.compare("7") == 0){
+				else if(opcionIngreso == 7){
 					gym->mostrar_estado_general();
 				}
 
-			}while(opcionIngreso.compare("0") != 0);
+			}while(opcionIngreso == 0);
 
 		}
 
-		if(opcionesEntrada.compare("3") != 0){
+		if(opcionesEntrada ==3){
 			//Despedida
 			cout<<"Bienvenido al men"<<(char)u<<" principal."<<endl;
 			delay(1);
 			system("cls");
 			//Termina Despedida
 		}
-
 		
-	
-		
-	}while(opcionesEntrada.compare("3") != 0);
+	}while(opcionesEntrada!=3);
 	
 	//Despedida
 	system("cls");
