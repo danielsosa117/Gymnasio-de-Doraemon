@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 using namespace std;
+const int MAXP = 4;
 
 class ZonaPesas{
 
@@ -14,8 +15,8 @@ private:
 	string estadoPes;
 	int capMaxPes;
 	int numPersonasPes;
-	Empleado *entrenador_pesas;
-	Empleado *empleado_servicio;
+	Empleado *empleado[MAXP];
+	int cont;
 
 public:
 
@@ -28,7 +29,8 @@ public:
 	int get_CapMaximaPes();
 	int get_PersonasPes();
 
-	void contratar_empleado(string cargo);
+	void contratar_empleado();
+	void mostrar_datos_empleado();
 
 	ZonaPesas();
 	ZonaPesas(int estado, int rec);

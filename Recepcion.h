@@ -6,7 +6,7 @@
 #include <string>
 #include <cstdlib>
 using namespace std;
-const int MAX = 3;
+const int MAXR = 4;
 
 class Recepcion{
 
@@ -15,8 +15,8 @@ private:
 	string estadoRec;
 	int capMaxRec;
 	int numPersonasRec;
-	Empleado *recepcionista;
-	Empleado *empleado_servicio;
+	int cont;
+	Empleado *empleado[MAXR];
 
 public:
 
@@ -29,7 +29,8 @@ public:
 	int get_CapMaximaRec();
 	int get_PersonasRec();
 
-	void contratar_empleado(string cargo);
+	void contratar_empleado();
+	void mostrar_datos_empleado();
 
 	Recepcion();
 	Recepcion(int estado, int rec);

@@ -143,23 +143,36 @@ void Gimnasio::mostrar_estado_general(){
 	system("PAUSE");
 }
 
-void Gimnasio::contratar_empleado_zona(string zona,string cargo){
+void Gimnasio::contratar_empleado_zona(string zona){
 
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
- 		recepcion->contratar_empleado(cargo);
+ 		recepcion->contratar_empleado();
 	}
-	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona_pesas") == 0){
- 		zonapesas->contratar_empleado(cargo);
+	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona pesas") == 0){
+ 		zonapesas->contratar_empleado();
 	}
-	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona_cardio") == 0){
-		zonacardio->contratar_empleado(cargo);
+	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona cardio") == 0){
+		zonacardio->contratar_empleado();
 	}
-	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona_humeda") == 0){
-		zonahumeda->contratar_empleado(cargo);
+	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
+		zonahumeda->contratar_empleado();
 	}
 }
 
-
+void Gimnasio::mostrar_datos_empleados_zona(string zona){
+	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
+ 		recepcion->mostrar_datos_empleado();
+	}
+	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona pesas") == 0){
+ 		zonapesas->mostrar_datos_empleado();
+	}
+	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona cardio") == 0){
+		zonacardio->mostrar_datos_empleado();
+	}
+	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
+		zonahumeda->mostrar_datos_empleado();
+	}
+}
 
 //_______CONSTRUCTORES Y DESTRUCTORES__________________
 

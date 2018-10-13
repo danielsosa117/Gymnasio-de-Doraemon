@@ -44,41 +44,62 @@ int ZonaPesas::get_PersonasPes(){
 	return numPersonasPes;
 }
 
-void ZonaPesas::contratar_empleado(string cargo){
-	string aseguradora;
-	int codigo, salario, subsidio;
+void ZonaPesas::contratar_empleado(){
+	string nombre, genero, cargo;
+	int codigo, salario, edad, identidad;
+
+	system("cls");
+	cout<<"Bienvenido al metodo de contratacion de un empleado para la Zona Pesas"<<endl;
+	if(cont <= 4){
+		cout<<"Porfavor ingresa los siguientes datos:"<<endl;
+		cout<<"El numero de empleados contratados es "<<cont<<" de 4 como maximo"<<endl<<endl;
+		cout<<"Nombre: ";
+		getline(cin,nombre);
+		cout<<"Edad: ";
+		cin>>edad;
+		cin.ignore();
+		cout<<"Genero: ";
+		getline(cin, genero);
+		cout<<"Cedula/Tarjeta Identidad: ";
+		cin>>identidad;
+		cin.ignore();
+		cout<<"Cargo: ";
+		getline(cin, cargo);
+		cout<<"Codigo: ";
+		cin>>codigo;
+		cout<<"Salario: ";
+		cin>>salario;
+		system("cls");
+		empleado[cont] = new Empleado(cargo, codigo, salario, nombre, edad, genero, identidad);
+		cont +=1;
+	}
+	else{
+		cout<<"Ya se ha completado el cupo maximo de empleados"<<endl;
+
+	}
+	system("cls");
+	cout<<"Gracias por su colaboracion"<<endl;
 	
-	if(cargo.compare("entrenador_pesas") == 0){
+}
 
-		system("cls");
-		cout<<"Bienvenido al metodo de contratacion de un empleado"<<endl;
-		cout<<"Porfavor ingresa los siguientes datos:"<<endl;
-		cout<<"Cargo: ";
-		cin>>cargo;
-		cout<<"Codigo: ";
-		cin>>codigo;
-		cout<<"Salario: ";
-		cin>>salario;
-		system("cls");
-		entrenador_pesas = new Empleado(cargo, codigo, salario);
+void ZonaPesas::mostrar_datos_empleado(){
+	int emp;
+	system("cls");
+	if (cont == 0){
+		cout<<"Hasta el momento no has contratado a ningun empleado en esta zona"<<endl;
+	}
+	else{
+		cout<<"..::.. Bienvenido al modulo de Muestra de datos de empleados..::.."<<endl;
+		cout<<"El numero de empleados contratados es "<<cont<<" de 4 como maximo"<<endl<<endl;
+		cout<<"__lista de empleados por nombre__"<<endl;
+		for(int i = 0; i < cont; i++){
+			cout<<"Nombre: "<<empleado[i]->get_Cargo()<<endl;
+		}
+		cout<<"ingresa el numero del empleado: ";
+		cin>>emp;
+		empleado[emp]->mostrar_datos();		
 	}
 
-	else if(cargo.compare("empleado_servicio") == 0){
-		
-		system("cls");
-		cout<<"Bienvenido al metodo de contratacion de un empleado"<<endl;
-		cout<<"Porfavor ingresa los siguientes datos:"<<endl;
-		cout<<"Cargo: ";
-		cin>>cargo;
-		cout<<"Codigo: ";
-		cin>>codigo;
-		cout<<"Salario: ";
-		cin>>salario;
-
-		system("cls");
-		cout<<"Gracias por su colaboracion"<<endl;
-		empleado_servicio = new Empleado(cargo, codigo, salario);
-	}
 }
 
 //_______CONSTRUCTORES Y DESTRUCTORES__________________
@@ -86,8 +107,7 @@ void ZonaPesas::contratar_empleado(string cargo){
 ZonaPesas::ZonaPesas(){
 	cout<<"Se ha creado la zona pesas del Gimnasio de Doraemon(sin Administrador)"<<endl;
 	estadoPes = "Cerrado";
-	entrenador_pesas = new Empleado();
-	empleado_servicio = new Empleado();
+	cont = 0;
 }
 
 ZonaPesas::ZonaPesas(int estado, int pes){
@@ -99,14 +119,13 @@ ZonaPesas::ZonaPesas(int estado, int pes){
 	else if(estado == 2)
 		estadoPes = "Mantenimiento";
 	capMaxPes = pes;
-	entrenador_pesas = new Empleado("entrenador_pesas",001,870000,"Cosalud", 01);
-	empleado_servicio=new Empleado("Empleado Servicio",002,800000,"coomeva", 01);
+	cont = 0;
 }
 
 ZonaPesas::~ZonaPesas(){
 	cout<<"Se ha demolido la zona pesas del Gimnasio de Doraemon por inaudita bancarota"<<endl;
-	delete entrenador_pesas;
+	delete *empleado;
 	cout<< "se despidio el entrenador de zona pesas y el empleado de servicio"<<endl;
-	delete empleado_servicio;
+
 }
 

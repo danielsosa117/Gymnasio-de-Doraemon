@@ -34,7 +34,7 @@ class Persona{
 		float get_Estatura();
 		float get_Peso();
 		string get_Genero();
-		int get_identidad(int edad, int numero);
+		int get_identidad(int edad);
 		
 		//Operaciones Adicionales
 		void calcularNacimiento();

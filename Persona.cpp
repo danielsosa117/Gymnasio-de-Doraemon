@@ -53,7 +53,7 @@ string Persona :: get_Genero(){
 	return genero;
 }
 
-int Persona :: get_identidad(int edad, int numero){
+int Persona :: get_identidad(int edad){
 	if(edad < 18)
 		return tarjeta_identidad;
 	else if(edad>=18)

@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 using namespace std;
+const int MAXC = 4;
 
 class ZonaCardio{
 
@@ -14,8 +15,8 @@ private:
 	string estadoCar;
 	int capMaxCar;
 	int numPersonasCar;
-	Empleado *entrenador_cardio;
-	Empleado *empleado_servicio;
+	Empleado *empleado[MAXC];
+	int cont;
 
 public:
 
@@ -28,7 +29,8 @@ public:
 	int get_CapMaximaCar();
 	int get_PersonasCar();
 
-	void contratar_empleado(string cargo);
+	void contratar_empleado();
+	void mostrar_datos_empleado();
 
 	ZonaCardio();
 	ZonaCardio(int estado, int car);

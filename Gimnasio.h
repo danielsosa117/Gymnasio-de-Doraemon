@@ -38,7 +38,8 @@ class Gimnasio{
 		virtual int get_PersonasGym();
 
 		void mostrar_estado_general();
-		void contratar_empleado_zona(string zona, string cargo);
+		void mostrar_datos_empleados_zona(string zona);
+		void contratar_empleado_zona(string zona);
 		
 		//Constructores
 		Gimnasio();
