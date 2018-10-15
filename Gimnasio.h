@@ -40,6 +40,7 @@ class Gimnasio{
 		void mostrar_estado_general();
 		void mostrar_datos_empleados_zona(string zona);
 		void contratar_empleado_zona(string zona);
+		void despedir_empleado_zona(string zona);
 		
 		//Constructores
 		Gimnasio();

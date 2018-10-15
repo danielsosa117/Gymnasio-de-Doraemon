@@ -87,19 +87,75 @@ void ZonaPesas::mostrar_datos_empleado(){
 	system("cls");
 	if (cont == 0){
 		cout<<"Hasta el momento no has contratado a ningun empleado en esta zona"<<endl;
+		system("PAUSE");
 	}
 	else{
 		cout<<"..::.. Bienvenido al modulo de Muestra de datos de empleados..::.."<<endl;
 		cout<<"El numero de empleados contratados es "<<cont<<" de 4 como maximo"<<endl<<endl;
 		cout<<"__lista de empleados por nombre__"<<endl;
 		for(int i = 0; i < cont; i++){
-			cout<<"Nombre: "<<empleado[i]->get_Cargo()<<endl;
+			cout<< i+1 <<"  Nombre: "<<empleado[i]->get_Nombre()<<endl;
 		}
-		cout<<"ingresa el numero del empleado: ";
-		cin>>emp;
-		empleado[emp]->mostrar_datos();		
+		bool aceptado = false;
+		while(aceptado == false){
+			cout<<endl<<"ingresa el numero del empleado: ";
+			cin>>emp;
+			try{
+				if(emp<1 or emp>cont) throw 1;
+			}
+			catch(int error){
+				system("cls");
+				cout<< "Valor ingresado invalido. "<< endl;
+				if(error == 1){
+					cout<<"entrada incorrecta.... El numero esta por fuera del rango"<<endl;
+					aceptado = false;
+					system("PAUSE");
+				}
+			}
+			aceptado = true;
+		}
+		empleado[emp-1]->mostrar_datos();
+		system("PAUSE");		
 	}
 
+}
+
+ void ZonaPesas::despedir_empleado(){
+	int emp;
+	system("cls");
+	if (cont == 0){
+		cout<<"Hasta el momento no has contratado a ningun empleado en esta zona"<<endl;
+		system("PAUSE");
+	}
+	else{
+		cout<<"..::.. Bienvenido al modulo de Despido de empleados..::.."<<endl;
+		cout<<"El numero de empleados contratados es "<<cont<<" de 4 como maximo"<<endl<<endl;
+		cout<<"__lista de empleados por nombre__"<<endl;
+		for(int i = 0; i < cont; i++){
+			cout<<i+1<< "  Nombre: "<<empleado[i]->get_Nombre()<<endl;
+		}
+		bool aceptado = false;
+		while(aceptado == false){
+			cout<<endl<<"ingresa el numero del empleado: ";
+			cin>>emp;
+			try{
+				if(emp<1 or emp>cont) throw 1;
+			}
+			catch(int error){
+				system("cls");
+				cout<< "Valor ingresado invalido. "<< endl;
+				if(error == 1){
+					cout<<"entrada incorrecta.... El numero esta por fuera del rango"<<endl;
+					aceptado = false;
+					system("PAUSE");
+				}
+			}
+			aceptado = true;
+		}
+		delete empleado[emp-1];
+		system("PAUSE");
+		
+	}
 }
 
 //_______CONSTRUCTORES Y DESTRUCTORES__________________

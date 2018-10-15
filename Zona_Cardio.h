@@ -31,6 +31,7 @@ public:
 
 	void contratar_empleado();
 	void mostrar_datos_empleado();
+	void despedir_empleado();
 
 	ZonaCardio();
 	ZonaCardio(int estado, int car);

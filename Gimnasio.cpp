@@ -47,13 +47,13 @@ void Gimnasio::set_estZonas(string zona, int estado){
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
  		recepcion->set_est_Rec(estado);
 	}
-	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona_pesas") == 0){
+	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona pesas") == 0){
  		zonapesas->set_est_Pes(estado);
 	}
-	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona_cardio") == 0){
+	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona cardio") == 0){
 		zonacardio->set_est_Car(estado);
 	}
-	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona_humeda") == 0){
+	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
 		zonahumeda->set_est_Hum(estado);
 	}
 }
@@ -67,13 +67,13 @@ void Gimnasio::set_CapMaxima(string zona, int capMax){
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
  		recepcion->set_CapMaximaRec(capMax);
 	}
-	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona_pesas") == 0){
+	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona pesas") == 0){
  		zonapesas->set_CapMaximaPes(capMax);
 	}
-	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona_cardio") == 0){
+	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona cardio") == 0){
 		zonacardio->set_CapMaximaCar(capMax);
 	}
-	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona_humeda") == 0){
+	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
 		zonahumeda->set_CapMaximaHum(capMax);
 	}
 }
@@ -159,6 +159,22 @@ void Gimnasio::contratar_empleado_zona(string zona){
 	}
 }
 
+void Gimnasio::despedir_empleado_zona(string zona){
+
+	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
+ 		recepcion->despedir_empleado();
+	}
+	if(zona.compare("Zona Pesas") == 0 || zona.compare("zona pesas") == 0){
+ 		zonapesas->despedir_empleado();
+	}
+	if(zona.compare("Zona Cardio") == 0 || zona.compare("zona cardio") == 0){
+		zonacardio->despedir_empleado();
+	}
+	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
+		zonahumeda->despedir_empleado();
+	}
+}
+
 void Gimnasio::mostrar_datos_empleados_zona(string zona){
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
  		recepcion->mostrar_datos_empleado();
@@ -179,6 +195,7 @@ void Gimnasio::mostrar_datos_empleados_zona(string zona){
 Gimnasio::Gimnasio(){
 	cout<<"Se ha creado el Gimnasio de Doraemon(sin Administrador)"<<endl;
 	estadoGym = "Cerrado";
+	numPersonasGym = 0;
 	recepcion = new Recepcion();
 	zonapesas = new ZonaPesas();
 	zonacardio = new ZonaCardio();
@@ -188,6 +205,7 @@ Gimnasio::Gimnasio(){
 Gimnasio::Gimnasio(int rec,int pes,int car, int hum, int gym){
 	cout<<"Se ha creado el Gimnasio de Doraemon(con Administrador)"<<endl;
 	estadoGym = "Cerrado";
+	numPersonasGym = 0;
 	capMaxGym = gym;
 	recepcion = new Recepcion(0,rec);
 	zonapesas = new ZonaPesas(0,pes);
