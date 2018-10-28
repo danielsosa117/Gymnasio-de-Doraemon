@@ -5,12 +5,14 @@
 #include "Zona_Pesas.h"
 #include "Zona_Cardio.h"
 #include "Zona_Humeda.h"
+#include "BasesDatos.h"
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 
 using namespace std;
+
 class Gimnasio{ 
 
 	private:
@@ -19,28 +21,29 @@ class Gimnasio{
 		int capMaxGym;
 		int numPersonasGym;
 		Recepcion *recepcion;
-		ZonaPesas *zonapesas;
-		ZonaCardio *zonacardio;
-		ZonaHumeda *zonahumeda;
+		ZonaPesas *zonaPesas;
+		ZonaCardio *zonaCardio;
+		ZonaHumeda *zonaHumeda;
 
 	public:
 
-		virtual void set_estGym(int estado);
-		void set_estZonas(string zonas, int estado);
-		void set_CapMaximaGym(int num);
-		void set_CapMaxima(string zona, int capMax);
-		void set_AgrPersonasGym(int num);
-		void set_EliPersonasGym(int num);
+		virtual void setEstadoGym(int estado); 
+		void setEstadoZonas(string zonas, int estado);
+		void setCapacidadMaximaGym(int num);
+		void setCapacidadMaxima(string zona, int capMax);
+		void setAgregarPersonasGym(int num);
+		void setEliminarPersonasGym(int num);
 
-		virtual string get_est_Gym();
-		int get_CapMaximaGym();
-		int get_CapMaxima(string zona);
-		virtual int get_PersonasGym();
+		virtual string getEstadoGym();
+		string getEstadoZonas(string);
+		int getCapacidadMaximaGym();
+		int getCapacidadMaxima(string zona);
+		virtual int getPersonasGym();
 
-		void mostrar_estado_general();
-		void mostrar_datos_empleados_zona(string zona);
-		void contratar_empleado_zona(string zona);
-		void despedir_empleado_zona(string zona);
+		void mostrarEstadoGeneral();
+		void mostrarDatosEmpleadosZona(string zona);
+		void contratarEmpleadoZona(string zona);
+		void despedirEmpleadoZona(string zona);
 		
 		//Constructores
 		Gimnasio();
