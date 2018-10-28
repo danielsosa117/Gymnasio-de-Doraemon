@@ -296,6 +296,8 @@ int main(){
 				cout<<"Opci"<<(char)o<<"n: ";
 				cin>>opcionIngreso;
 
+				//Algunas exepciones agregadas
+
 				try{
 					if(opcionIngreso.compare("1")!=0 and opcionIngreso.compare("2")!=0 and opcionIngreso.compare("3")!=0 and 
 						opcionIngreso.compare("4")!=0 and opcionIngreso.compare("5")!=0 and opcionIngreso.compare("6")!=0 and
