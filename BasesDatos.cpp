@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include "BasesDatos.h"
+#include "Gimnasio.h"
 using namespace std;
 
 Archivos::Archivos(){
@@ -12,7 +13,7 @@ Archivos::Archivos(string archivoTexto){
 	archivo = archivoTexto;
 }
 
-void Archivos::getDatos(){
+void Archivos::setDatos(){
 	ifstream baseDatos(archivo.c_str());
 	string linea, dato;
 	vector<string> facts;
@@ -33,25 +34,19 @@ void Archivos::getDatos(){
 		dato.clear();
 		facts.clear();
 	}
-	baseDatos.close();
+	baseDatos.close(); 
 }
 
-void Archivos::setDatos(){
-	for (int i = 0; i < datos.size(); i++){
-		for(int j = 0; j < datos[i].size(); j++){
-			cout << datos[i][j];
-			if (j < datos[i].size() - 1)
-				cout << ' ';
-		}
-		cout << endl;
-	}
+vector< vector<string> > Archivos::getDatos(){
+
+	return datos;
 }
 
-void Archivos::getArchivo(string archivoTexto){
+void Archivos::setArchivo(string archivoTexto){
 	archivo = archivoTexto;
 }
 
-string Archivos::setArchivo(){
+string Archivos::getArchivo(){
 	return archivo;
 }
 

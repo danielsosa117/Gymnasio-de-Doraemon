@@ -4,10 +4,12 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "Gimnasio.h"
 
 using namespace std;
 
 class Archivos {
+
 	private:
 		string archivo;
 		vector< vector<string> > datos;
@@ -17,11 +19,11 @@ class Archivos {
 		Archivos();
 		Archivos(string archivo);
 
-		void getDatos();
+		vector< vector<string> > getDatos();
 		void setDatos();
 
-		void getArchivo(string archivo);
-		string setArchivo();
+		void setArchivo(string archivo);
+		string getArchivo();
 
 		~Archivos();
 
