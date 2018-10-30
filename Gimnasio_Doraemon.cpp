@@ -34,6 +34,35 @@
 #include <cctype>
 #include <stdlib.h>
 using namespace std;
+using std::ostream;
+using std::cout;
+
+
+ostream &operator<<(ostream &salida,const Gimnasio *gym){
+	salida << "..::.. Bienvenido al modulo de Muestra de datos del Gimnasio en General";
+	salida << "__Gimnasio__ \n";
+	salida << "El estado del Gimnasio es " << gym->estadoGym << "\n";
+	salida << "La capacidad maxima del Gimnasio es " << gym->capMaxGym << "\n";
+	salida << "El numero de personas dentro del Gimnasio es " << gym->numPersonasGym << "\n\n";
+	salida << "__Recepcion__\n";
+	salida << "El estado de la recepcion es " << gym->recepcion->get_est_Rec() << "\n";
+	salida << "La capacidad maxima de la recepcion es " << gym->recepcion->get_CapMaximaRec() << "\n";
+	salida << "El numero de personas dentro de la recepcion es " << gym->recepcion->get_PersonasRec() << "\n\n";
+	salida << "__Zona Pesas__\n";
+	salida << "El estado de la Zona Pesas es " << gym->zonaPesas->get_est_Pes() << "\n";
+	salida << "La capacidad maxima de la Zona Pesas es " << gym->zonaPesas->get_CapMaximaPes() << "\n";
+	salida << "El numero de personas dentro de la Zona Pesas es " << gym->zonaPesas->get_PersonasPes() << "\n\n";
+	salida << "__Zona Humeda__\n";
+	salida << "El estado de la Zona Humeda es " << gym->zonaHumeda->get_est_Hum() << "\n";
+	salida << "La capacidad maxima de la Zona Humeda es " << gym->zonaHumeda->get_CapMaximaHum() << "\n";
+	salida << "El numero de personas dentro de la Zona Humeda es " << gym->zonaHumeda->get_PersonasHum() << "\n\n";
+	salida << "__Zona Cardio__\n";
+	salida << "El estado de la Zona Cardio es " << gym->zonaCardio->get_est_Car() << "\n";
+	salida << "La capacidad maxima de la Zona Cardio es " << gym->zonaCardio->get_CapMaximaCar() << "\n";
+	salida << "El numero de personas dentro de la Zona Cardio es " << gym->zonaCardio->get_PersonasCar() << "\n\n";
+
+	return salida;
+}
 
 /*
 
@@ -81,6 +110,13 @@ string convertirNumeroString(int numero){
 	return numeroString;
 }
 
+
+/*
+
+Esta sobrecarga permite actualizar la base de datos o 
+Archivo Plano Zonas.txt
+
+*/
 
 void operator+(Archivos &archivo, Gimnasio *gym){
 
@@ -162,6 +198,8 @@ void operator+(Archivos &archivo, Gimnasio *gym){
 	return;
 }
 
+
+
 bool esError(string entrada){
 	for (int i = 0; i < entrada.size(); i++){
 
@@ -205,8 +243,6 @@ bool comprobacion(string entrada){
 				return false;
 	}
 }
-
-bool buscarUsuario();
 
 /*---------------------------------------------------------------//
 | Funcion de conteo de tiempo de espera
@@ -321,10 +357,10 @@ int main(){
 					if(opcionIngreso.compare("1")!=0 && opcionIngreso.compare("2")!=0) throw 1;
 				}
 				catch(int error){
-					system("cls");
-					cout<< "Valor ingresado invalido. "<< endl;
+					
+					cout << endl << endl << "Valor ingresado invalido. "<< endl;
 					if(error == 1){
-						cout<<"entrada incorrecta.... intentalo nuevamente y lee atentamente"<<endl;
+						cout<<"Entrada incorrecta.... intentalo nuevamente y lee atentamente"<<endl;
 						delay(2);
 						system("PAUSE");
 					}
@@ -356,6 +392,17 @@ int main(){
 					archivo.setArchivo("Personas.txt");
 					archivo.setDatos();
 					usuarios = archivo.getDatos();
+					cout << endl << " Usuarios Inscritos" << endl;
+					for (int i = 0; i < usuarios.size(); i++){
+
+						if ("Cliente" == usuarios[i][0]){
+							cout << "Nombre: " << usuarios[i][1] << endl;
+							cout << "Cargo: " << usuarios[i][0] << endl;
+							cout << "Edad: " << usuarios[i][2] << endl;
+							cout << "Tarjeta Identidad: " << usuarios[i][3] << endl;
+							cout << "Genero: " << usuarios[i][4] << endl << endl;
+						}
+					}
 					
 					system("PAUSE");
 				}
@@ -419,17 +466,6 @@ int main(){
 					if (opcionIngreso == "1" || opcionIngreso == "2" || opcionIngreso == "3" || opcionIngreso == "4" || opcionIngreso == "5" || opcionIngreso == "6" || opcionIngreso == "7" || opcionIngreso == "8" || opcionIngreso == "9")
 						aceptado = true;
 
-<<<<<<< HEAD
-				//Algunas exepciones agregadas
-
-				try{
-					if(opcionIngreso.compare("1")!=0 and opcionIngreso.compare("2")!=0 and opcionIngreso.compare("3")!=0 and 
-						opcionIngreso.compare("4")!=0 and opcionIngreso.compare("5")!=0 and opcionIngreso.compare("6")!=0 and
-						opcionIngreso.compare("7")!=0 and opcionIngreso.compare("8")!=0 and opcionIngreso.compare("0")!=0) throw 1;
-				}
-				catch(int error){
-=======
->>>>>>> 47197b6c46a5cd316f525d02300666a1457cf38d
 					system("cls");
 				}while(!aceptado);
 				//Termina menu ingreso
@@ -668,7 +704,9 @@ int main(){
 
 					gym->setCapacidadMaximaGym(capacidadTotalGym);
 					cout << endl << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << endl << "..::..Gracias por su colaboraci"<< (char)o << "n..::.."<< endl;
-					delay(2);			
+					delay(2);
+
+					archivo + gym;		
 				}
 
 
@@ -809,6 +847,8 @@ int main(){
 
 					cout<<"..::..Gracias por su colaboraci"<< (char)o << "n..::.."<<endl;
 					delay(2);
+
+					archivo + gym;
 				}
 
 
@@ -1072,7 +1112,9 @@ int main(){
 					gym->setEstadoZonas(zona,atoi(estado.c_str()));
 					system("cls");
 					cout<<"..::..Gracias por su colaboraci"<< (char)o << "n..::.."<<endl;
-					delay(2);	
+					delay(2);
+
+					archivo + gym;
 				}
 
 
@@ -1083,6 +1125,7 @@ int main(){
 
 
 				else if(opcionIngreso.compare("4") == 0){
+
 					string capacidad;
 					bool aceptado = false;
 					string zona;
@@ -1249,6 +1292,9 @@ int main(){
 					system("cls");
 					cout<<"..::.. Gracias por su colaboraci"<< (char)o << "n ..::.."<<endl;
 					delay(2);
+
+					archivo + gym;
+				
 				}
 				/*---------------------------------------------------------------//
 				| Contratacion de empleados por zona es nesesario introducir los 
@@ -1256,55 +1302,126 @@ int main(){
 				//---------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("5") == 0){
-					bool aceptado = false;
+					
+					bool aceptado;
 					string zona;
 					do{
-						
 						aceptado = true;
 						system("cls");
-						cout << "..::.. Bienvenido al m" << (char)o << "dulo de contrataciones ..::.." << endl;
-						cout << "Por favor ingresa la siguiente informaci" << (char)o << "n" << endl << endl;
+						cout << "..::.. Bienvenido al modulo de modificaci" << (char)o << "n de capacidad maxima de Zonas ..::.." << endl;
+						cout << "Favor escoge una cantidad y una zona " << endl << endl;
+						cout << " Zonas" << endl;
+						cout << "   1) Recepcion" << endl;
+						cout << "   2) Zona Pesas" << endl;
+						cout << "   3) Zona Cardio" << endl;
+						cout << "   4) Zona Humeda" << endl << endl;
 						
 						cout<<"Zona: ";
 						getline(cin, zona);
+
 						try{
-							if(zona.compare("Recepcion") != 0 && zona.compare("recepcion") != 0 && (zona[0] == 'R' or zona[0] == 'r') && zona[6]!= 'a') throw 1;
-							if(zona.compare("Zona Pesas") != 0 && zona.compare("zona pesas") != 0 && (zona[5] == 'P'  or zona[5] == 'p') ) throw 2;
-							if(zona.compare("Zona Cardio") != 0 && zona.compare("zona cardio") != 0 && (zona[5]== 'C' or zona[5] == 'c') && zona[6]== 'a' ) throw 3;
-							if(zona.compare("Zona Humeda") != 0 && zona.compare("zona humeda") != 0 && (zona[5]== 'H' or zona[5] == 'h') ) throw 4;
+							if (zona.size() != 0){
+								if (zona[0] == '1' && zona.size() > 1) throw 1;
+								if (zona.compare("Recepcion") == 0) throw 1;
+								if (zona.compare("recepcion") == 0) throw 1;
+								if (zona[0] == 'R' || zona[0] == 'r') throw 1;
+
+								if (zona[0] == '2' && zona.size() > 1) throw 2;
+								if (zona.compare("Zona Pesas") == 0) throw 2;
+								if (zona.compare("zona pesas") == 0) throw 2;
+								if (zona.compare("ZonaPesas") == 0) throw 2;
+								if (zona.compare("zonapesas") == 0) throw 2;
+								if (zona.compare("ZONA PESAS") == 0) throw 2;
+								if (zona.compare("ZONAPESAS") == 0) throw 2;
+								if (zona.size() > 5)
+									if(zona[5] == 'p' || zona[5] == 'P' || zona[4] == 'p' || zona[4] == 'P') throw 2;
+
+								if (zona[0] == '3' && zona.size() > 1) throw 3;
+								if (zona.compare("Zona Cardio") == 0) throw 3;
+								if (zona.compare("zona cardio") == 0) throw 3;
+								if (zona.compare("ZonaCardio") == 0) throw 3;
+								if (zona.compare("zonacardio") == 0) throw 3;
+								if (zona.compare("ZONA CARDIO") == 0) throw 3;
+								if (zona.compare("ZONACARDIO") == 0) throw 3;
+								if (zona.size() > 5)
+									if(zona[5] == 'p' || zona[5] == 'P' || zona[4] == 'p' || zona[4] == 'P') throw 3;
+
+
+								if (zona[0] == '4' && zona.size() > 1) throw 4;
+								if (zona.compare("Zona Humeda") == 0) throw 4;
+								if (zona.compare("zona humeda") == 0) throw 4;
+								if (zona.compare("ZonaHumeda") == 0) throw 4;
+								if (zona.compare("zonahumeda") == 0) throw 4;
+								if (zona.compare("ZONA HUMEDA") == 0) throw 4;
+								if (zona.compare("ZONAHUMEDA") == 0) throw 4;
+								if (zona.size() > 5)
+									if(zona[5] == 'p' || zona[5] == 'P' || zona[4] == 'p' || zona[4] == 'P') throw 4;
+
+								if (zona[0] == 'z' || zona[0] == 'Z') throw 6;
+								if (zona != "1" && zona != "2" && zona != "3" && zona != "4") throw 5;
+							}
+							else
+								throw 5;
 						}
+
 						catch(int error){
-							system("cls");
-							cout<< "Valor ingresado invalido. "<< endl;
+							
 							if(error == 1){
-								cout << "Entrada incorrecta...."<<endl<< " Ayuda: puede que la entrada que quieras sea Recepcion"<<endl;
+								cout << endl << endl <<"Entrada incorrecta...." << endl << "  Ayuda: puede que la entrada que quieras sea Recepci" << (char)o << "n, en ese caso digite el n" << (char)u << "mero 1"<<endl;
 								delay(2);
 								system("PAUSE");
 								aceptado = false;
 							}
 							if(error == 2){
-								cout << "Entrada incorrecta...."<<endl<< " Ayuda: puede que la entrada que quieras sea Zona Pesas"<<endl;
+								cout << endl << endl << "Entrada incorrecta...." << endl << "  Ayuda: puede que la entrada que quieras sea Zona Pesas, en ese caso digite el n"<< (char)u << "mero 2"<<endl;
 								delay(2);
 								system("PAUSE");
 								aceptado = false;
 							}
 							if(error == 3){
-								cout << "Entrada incorrecta...."<<endl<< " Ayuda: puede que la entrada que quieras sea Zona Cardio"<<endl;
+								cout << endl << endl << "Entrada incorrecta...." << endl << "  Ayuda: puede que la entrada que quieras sea Zona Cardio, en ese caso digite el n"<< (char)u << "mero 3"<<endl;
 								delay(2);
 								system("PAUSE");
 								aceptado = false;
 							}
 							if(error == 4){
-								cout << "Entrada incorrecta...."<<endl<< " Ayuda: puede que la entrada que quieras sea Zona Humeda"<<endl;
+								cout << endl << endl << "Entrada incorrecta...." << endl << "  Ayuda: puede que la entrada que quieras sea Zona Humeda, en ese caso digite el n"<< (char)u << "mero 4"<<endl;
 								delay(2);
 								system("PAUSE");
 								aceptado = false;
 							}
-						}
+							if(error == 5){
+								cout << endl << endl << "Entrada incorrecta...." << endl;
+								delay(2);
+								system("PAUSE");
+								aceptado = false;
+							}
+							if(error == 6){
+								cout << endl << endl << "Entrada incorrecta...." << endl << "  Ayuda: las zonas propuestas son:" << endl;
+								cout << endl << "Zonas " << endl;
+								cout << "1) Recepcion" << endl;
+								cout << "2) Zona Pesas" << endl;
+								cout << "3) Zona Humeda" << endl;
+								cout << "4) Zona Cardio" << endl << endl;
+								delay(2);
+								system("PAUSE");
+								aceptado = false;
+							}
 
+						}
+						
 						system("cls");
-					} while(aceptado == false);
-					system("cls");
+					} while(!aceptado);
+
+					if (zona == "1")
+						zona = "Recepcion";
+					else if (zona == "2")
+						zona = "Zona Pesas";
+					else if (zona == "3")
+						zona = "Zona Cardio";
+					else
+						zona = "Zona Humeda";
+
 					gym->contratarEmpleadoZona(zona);
 					cout<<"..::..Gracias por su colaboraci"<< (char)o << "n..::.."<<endl;
 					delay(2);
@@ -1422,12 +1539,12 @@ int main(){
 				//---------------------------------------------------------------*/
 
 				else if(opcionIngreso.compare("8") == 0){
-					gym->mostrarEstadoGeneral();
+					//gym->mostrarEstadoGeneral();
+					cout << gym;
+					system("pause");
 				}
 
 			}while(opcionIngreso.compare("9") != 0);
-
-			archivo + gym;
 
 		}
 		//Termina op

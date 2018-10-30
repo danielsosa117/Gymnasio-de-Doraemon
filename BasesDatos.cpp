@@ -14,6 +14,7 @@ Archivos::Archivos(string archivoTexto){
 }
 
 void Archivos::setDatos(){
+	datos.clear();
 	ifstream baseDatos(archivo.c_str());
 	string linea, dato;
 	vector<string> facts;

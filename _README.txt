@@ -18,7 +18,7 @@ y dale enter
 
 4. Lo anterior ha debido abrirte una pestaña del cmd con la direccion de la carpeta.
 
-5. copia el siguiente texto "g++ Gimnasio_Doraemon.cpp Gimnasio.o Recepcion.o Zona_Pesas.o Zona_Cardio.o Zona_Humeda.o Empleado.o Persona.o BasesDatos.o -o Gimnasio_Doraemon" y da enter.
+5. Para compilar el archivo favor compilar todos los cpp, ya sea por el comando g++ *.cpp o escribir todos los cpp uno por uno.
 
 6. ejecuta el Gimnasio_Doraemon.exe y disfruta.....
 

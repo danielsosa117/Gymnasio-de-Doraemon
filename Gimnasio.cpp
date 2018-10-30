@@ -31,6 +31,8 @@ Pontificia Universidad Javeriana Cali
 #include <ctime>
 #include <fstream>
 using namespace std;
+using std::cout;
+using std::ostream;
 
 const int  a = 160, o = 162, i = 161, e = 130, u = 163;
 
