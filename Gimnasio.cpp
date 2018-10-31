@@ -12,24 +12,26 @@ Integrantes:
 Docente: Simena Dinas.
 
 Curso: Tecnicas y Practicas De Programacion.
-Semestre II 
+Semestre II
 
 Pontificia Universidad Javeriana Cali
 2018
 
 */
-#include "BasesDatos.h" 
+#include "BasesDatos.h"
 #include "Gimnasio.h"
 #include "Recepcion.h"
 #include "Zona_Pesas.h"
 #include "Zona_Cardio.h"
 #include "Zona_Humeda.h"
+#include "Cliente.h"
 
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
+#include <vector>
 using namespace std;
 using std::cout;
 using std::ostream;
@@ -66,7 +68,7 @@ void Gimnasio::setCapacidadMaximaGym(int num){
 }
 
 void Gimnasio::setCapacidadMaxima(string zona, int capMax){
-	
+
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
  		recepcion->set_CapMaximaRec(capMax);
 	}
@@ -79,14 +81,6 @@ void Gimnasio::setCapacidadMaxima(string zona, int capMax){
 	if(zona.compare("Zona Humeda") == 0 || zona.compare("zona humeda") == 0){
 		zonaHumeda->set_CapMaximaHum(capMax);
 	}
-}
-
-void Gimnasio::setAgregarPersonasGym(int num){
-	numPersonasGym += num;
-}
-
-void Gimnasio::setEliminarPersonasGym(int num){
-	numPersonasGym -= num;
 }
 
 //_______Metodos GET__________________
@@ -117,7 +111,7 @@ string Gimnasio::getEstadoZonas(string zona){
 }
 
 int Gimnasio::getCapacidadMaxima(string zona){
-	
+
 	if(zona.compare("Recepcion") == 0 || zona.compare("recepcion") == 0){
 		return  recepcion->get_CapMaximaRec();
 	}
@@ -132,8 +126,37 @@ int Gimnasio::getCapacidadMaxima(string zona){
 	}
 }
 
-int Gimnasio::getPersonasGym(){
-	return numPersonasGym;
+void Gimnasio::registrarClientes(){
+	int membresia, capital, codigo, codigoM, edad, identi;
+	string nombre, genero;
+	cout<<"Porfavor ingresa los siguientes datos:"<<endl;
+	cout<<"Nombre: ";
+	cin.ignore();
+	getline(cin,nombre);
+	cout<<"Edad: ";
+	cin>>edad;
+	cin.ignore();
+	cout<<"Genero: ";
+	getline(cin, genero);
+	cout<<"Cedula/Tarjeta Identidad: ";
+	cin>>identi;
+	cin.ignore();
+	cout<<"numero Membresia: ";
+	cin>>membresia;
+	cout<<"Codigo Cliente: ";
+	cin>>codigo;
+	cout<<"Codigo Membresia: ";
+	cin>>codigoM;
+	cout<<"Capital: ";
+	cin>>capital;
+	system("cls");
+	Cliente clientetemp(membresia, codigoM, capital, codigo, nombre, edad, genero, identi);
+	Registrados.push_back(clientetemp);
+	cout<<"gola";
+}
+
+void Gimnasio::mostrarPerRegistradas(){
+	Registrados[0].mostrardatos();
 }
 
 //METODOS APARTE
@@ -219,7 +242,6 @@ Gimnasio::Gimnasio(){
 	archivo.setArchivo("Zonas.txt");
 	archivo.setDatos();
 	datos = archivo.getDatos();
-
 	setEstadoGym(atoi(datos[0][1].c_str()));
 	numPersonasGym = 0;
 	capMaxGym = atoi(datos[0][1].c_str());

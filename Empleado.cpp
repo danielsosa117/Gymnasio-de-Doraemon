@@ -4,7 +4,7 @@
 
 #include <string>
 #include "Empleado.h"
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
 /*
@@ -12,14 +12,14 @@ Nombres: Juan Sebastian Reyes Layton
 		 Daniel Sosa
 		 Carlos Andres Angel
 Fecha:  Septiembre 15 de 2018
-Descripción General: En este archivo estan todas la implentaciones de los métodos 
+Descripciï¿½n General: En este archivo estan todas la implentaciones de los mï¿½todos
 declarados en "Empleado.h".  Cada uno de los archivos se va a explicar por separado.
 */
 
 const int  a = 160, o = 162, i = 161, e = 130, u = 163;
 
-////////////////MÉTODOS SET////////////////
-	
+////////////////Mï¿½TODOS SET////////////////
+
 void Empleado::set_Cargo(string cargo){
 	this->cargo=cargo;
 }//metodo para la modificacion de la variable privada cargo
@@ -32,10 +32,10 @@ void Empleado::set_Salario(int salario){
 	this->salario = salario;
 }//metodo para la modificacion de la variable privada salario
 
-////////////////MÉTODOS GET////////////////
+////////////////Mï¿½TODOS GET////////////////
 
 
-//Los métodos get se usan para recuperar, obtener o leer el valor para cada una de los aributos 
+//Los mï¿½todos get se usan para recuperar, obtener o leer el valor para cada una de los aributos
 
 
 string Empleado::get_Cargo(){
@@ -51,11 +51,11 @@ int Empleado::get_Salario(){
 }
 
 
-////////////////MÉTODOS SET////////////////
+////////////////Mï¿½TODOS SET////////////////
 
 
 /*
-Los métodos set se usan para modificar, cambiar, asignar un valor para cada una de los aributos 
+Los mï¿½todos set se usan para modificar, cambiar, asignar un valor para cada una de los aributos
 */
 
 
@@ -68,7 +68,7 @@ void Empleado::terminar_horario(int horas){
 }
 
 void Empleado::pedir_permiso(int horas){
-	cout << "Has pedido permiso señ@r" << get_Cargo()  << endl;
+	cout << "Has pedido permiso seï¿½@r" << get_Cargo()  << endl;
 }
 
 void Empleado::entrar_comer(){
@@ -76,7 +76,7 @@ void Empleado::entrar_comer(){
 }
 
 void Empleado::salir_comer(){
-	cout << "Hasta luego señ@r" << get_Cargo() << endl;
+	cout << "Hasta luego seï¿½@r" << get_Cargo() << endl;
 }
 
 void Empleado::mostrar_datos(){
@@ -94,8 +94,8 @@ void Empleado::mostrar_datos(){
 /*
 Descripcion: Es el constructor por defecto
 Entradas: Ninguna
-Salida: Ninguna 
-Precondiciones: Ninguna 
+Salida: Ninguna
+Precondiciones: Ninguna
 Poscondiciones: Ninguna
 */
 
@@ -108,15 +108,15 @@ Empleado::Empleado(){
 }
 
 /*
-Descripcion: Es el constructor 
-Entradas: 
+Descripcion: Es el constructor
+Entradas:
 	cargo: Cargo del Usuario
 	codigo: Codigo del Usuario
 	salario: Salario del Usuario
 	seguro: Seguro del Usuario
 	subsidio: Subsidio del Usuario
 Salida: Ninguna  // No es necesario, los constructores no tienen salida
-Precondiciones: Ninguna 
+Precondiciones: Ninguna
 Poscondiciones: Ninguna
 */
 
@@ -138,11 +138,11 @@ Empleado::Empleado(string cargo, int codigo,int salario, string nombre, int edad
 Descripcion: Es destructor
 Entradas: Ninguna
 Salida: Ninguna
-Precondiciones: Ninguna 
+Precondiciones: Ninguna
 Poscondiciones: Ninguna
 */
 
 Empleado::~Empleado(){
-	cout <<endl;	
+	cout <<endl;
 	cout << "Aabas de despedir a un empleado "<<endl;
 }

@@ -18,7 +18,10 @@ y dale enter
 
 4. Lo anterior ha debido abrirte una pestaña del cmd con la direccion de la carpeta.
 
-5. Para compilar el archivo favor compilar todos los cpp, ya sea por el comando g++ *.cpp o escribir todos los cpp uno por uno.
+5. Para compilar el archivo puedes compilarlo de las siguientes maneras:
+			1_ g++ *.cpp -o Gimnasio_Doraemon
+			2_ mingw32-make.exe y despues "del *.o"
+			3_  g++ Gimnasio_Doraemon.cpp Gimnasio.cpp Zona_Pesas.cpp Zona_Humeda.cpp Zona_Cardio.cpp Persona.cpp Membresia.cpp Empleado.cpp Cliente.cpp Recepcion.cpp BasesDatos.cpp -o Gimnasio_Doraemon
 
 6. ejecuta el Gimnasio_Doraemon.exe y disfruta.....
 

@@ -6,17 +6,18 @@
 #include "Zona_Cardio.h"
 #include "Zona_Humeda.h"
 #include "BasesDatos.h"
+#include "Cliente.h"
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
+#include <vector>
 using namespace std;
 using std::cout;
 using std::ostream;
 
 
-class Gimnasio{ 
+class Gimnasio{
 
 	friend ostream &operator<<(ostream &,const Gimnasio *);
 
@@ -24,6 +25,7 @@ class Gimnasio{
 
 		string estadoGym;
 		int capMaxGym;
+		vector<Cliente> Registrados;
 		int numPersonasGym;
 		Recepcion *recepcion;
 		ZonaPesas *zonaPesas;
@@ -32,24 +34,23 @@ class Gimnasio{
 
 	public:
 
-		virtual void setEstadoGym(int estado); 
+		virtual void setEstadoGym(int estado);
 		void setEstadoZonas(string zonas, int estado);
 		void setCapacidadMaximaGym(int num);
 		void setCapacidadMaxima(string zona, int capMax);
-		void setAgregarPersonasGym(int num);
-		void setEliminarPersonasGym(int num);
 
 		virtual string getEstadoGym();
 		string getEstadoZonas(string);
 		int getCapacidadMaximaGym();
 		int getCapacidadMaxima(string zona);
-		virtual int getPersonasGym();
 
+		void registrarClientes();
+		void mostrarPerRegistradas();
 		void mostrarEstadoGeneral();
 		void mostrarDatosEmpleadosZona(string zona);
 		void contratarEmpleadoZona(string zona);
 		void despedirEmpleadoZona(string zona);
-		
+
 		//Constructores
 		Gimnasio();
 		Gimnasio(int rec,int pes,int car, int hum, int gym);
