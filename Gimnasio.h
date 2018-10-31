@@ -12,8 +12,13 @@
 #include <cstdlib>
 
 using namespace std;
+using std::cout;
+using std::ostream;
+
 
 class Gimnasio{ 
+
+	friend ostream &operator<<(ostream &,const Gimnasio *);
 
 	private:
 

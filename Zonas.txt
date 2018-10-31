@@ -1,5 +1,5 @@
-Gimansio-240-
-Recepcion-60-0
-Zona Pesas-60-0
-Zona Cardio-60-0
-Zona Humeda-60-0
+Gimansio-100-
+Recepcion-10-0
+Zona Pesas-20-0
+Zona Cardio-30-0
+Zona Humeda-40-0

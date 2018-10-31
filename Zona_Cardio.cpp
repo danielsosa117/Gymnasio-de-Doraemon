@@ -48,11 +48,11 @@ void ZonaCardio::contratar_empleado(){
 	int codigo, salario, edad, identidad;
 
 	system("cls");
-	cout<<"Bienvenido al metodo de contratacion de un empleado para la Zona Cardio"<<endl;
+	cout << "Bienvenido al metodo de contratacion de un empleado para la Zona Cardio" << endl;
 	if(cont <= 4){
-		cout<<"Porfavor ingresa los siguientes datos:"<<endl;
-		cout<<"El numero de empleados contratados es "<<cont<<" de 4 como maximo"<<endl<<endl;
-		cout<<"Nombre: ";
+		cout << "Porfavor ingresa los siguientes datos:" << endl;
+		cout << "El numero de empleados contratados es " << cont << " de 4 como maximo" << endl << endl;
+		cout << "Nombre: ";
 		getline(cin,nombre);
 		cout<<"Edad: ";
 		cin>>edad;
